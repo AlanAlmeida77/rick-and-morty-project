@@ -1,0 +1,33 @@
+.aboutContainer {
+padding: 20px;
+width:auto;
+height: 100vh;
+background-color: #262C3A;
+}
+
+/* Estilo para el título de la sección "Acerca de mí" */
+.aboutMe {
+    padding-top: 50px;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la imagen de perfil */
+.about-me img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Estilo para el párrafo de descripción */
+.description {
+    color:white;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
+}
