@@ -4,11 +4,11 @@ import { useParams, Link } from "react-router-dom";
 
 const Detail = () => {
 
-const { id } = useParams();
+const { detailId } = useParams();
 const [character, setCharacter] = useState({});
 
 useEffect(() => {
-fetch(`https://rickandmortyapi.com/api/character/${id}`)
+fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
 .then((response) => response.json())
 .then((char) => {
 if (char.name) {
@@ -21,7 +21,7 @@ window.alert("No hay personajes con ese ID");
 window.alert("No hay personajes con ese ID");
 });
 return setCharacter({});
-}, [id]);
+}, [detailId]);
 
 if (!character.name) {
 return <div>Loading...</div>;
@@ -29,15 +29,15 @@ return <div>Loading...</div>;
 
 return (
 <div>
-<h1>{character.name}</h1>
-<p>Status: {character.status}</p>
-<p>Specie: {character.species}</p>
-<p>Gender: {character.gender}</p>
-<p>Origin: {character.origin.name}</p>
-<img src={character.image} alt={character.name} />
-<Link to="/">
+<Link to="/home">
         <button>Regresar a Home</button>
         </Link>
+<h1>{character?.name}</h1>
+<p>Status: {character?.status}</p>
+<p>Specie: {character?.species}</p>
+<p>Gender: {character?.gender}</p>
+<p>Origin: {character?.origin?.name}</p>
+<img src={character?.image} alt={character.name} />
 </div>
 );
 }
