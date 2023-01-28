@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 const Nav = (props) => {
     return (
     <div className={styles.nav}>
+        <Link to='/home'>LOGOUT</Link>
         <Link to='about'>About</Link>
         <Link to='home'>Home</Link>
         <SearchBar onSearch={props.onSearch} />

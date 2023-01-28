@@ -2,12 +2,31 @@ import Cards from './components/cards/Cards.jsx'
 import Nav from './components/nav/Nav.jsx'
 import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
+import Form from "./components/form/Form.jsx";
 import styles from "./components/cards/cards.module.css"
-import {useState} from 'react';
-import { Routes, Route} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 function App () {
   const [characters, setCharacters] = useState([]);
+  const location = useLocation();
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+
+
+  const username = "negligenciadigital@gmail.com";
+  const password = "123456789";
+
+  const login = (userData) => {
+    if (userData.username === username && userData.password === password){
+          setAccess(true)
+          navigate("/home")
+    }
+  }   
+
+  useEffect(() =>{
+      !access && navigate ('/')
+  }, [access, navigate])
 
   const onSearch = (character) => {
     if(!characters.find(char => char.id === character.id)){
@@ -30,7 +49,7 @@ function App () {
 
   return (
     <div className={styles.app}>
-    <Nav onSearch={onSearch} onRandom={onRandom}/>
+      {location.pathname === '/' ? <Form login={login}/> :  <Nav onSearch={onSearch} onRandom={onRandom}/>}
     <Routes>
       <Route path='home' element={ <Cards characters={characters} onClose={onClose}/>}/>
       <Route path='about' element={<About />}/>
