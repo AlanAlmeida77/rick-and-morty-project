@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import styles from './nav.module.css'
+
 import {Link} from 'react-router-dom';
 
 const Nav = (props) => {
