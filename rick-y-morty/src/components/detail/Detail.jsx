@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import styles from './detail.module.css'
 
 
 const Detail = () => {
@@ -28,16 +29,18 @@ return <div>Loading...</div>;
 }
 
 return (
-<div>
-<Link to="/home">
-        <button>Regresar a Home</button>
-        </Link>
+<div className={styles.card}>
+<img src={character?.image} alt={character.name} className={styles.image} />
+<div className={styles.details}>
 <h1>{character?.name}</h1>
 <p>Status: {character?.status}</p>
 <p>Specie: {character?.species}</p>
 <p>Gender: {character?.gender}</p>
 <p>Origin: {character?.origin?.name}</p>
-<img src={character?.image} alt={character.name} />
+<Link to="/home">
+        <button className={styles.button}>Regresar a Home</button>
+        </Link>
+        </div>
 </div>
 );
 }

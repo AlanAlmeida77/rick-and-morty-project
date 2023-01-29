@@ -3,7 +3,7 @@
 }
 
 .cardsContainer {
-   margin-top: 10%;
+   margin-top: 15%;
     display: flex;
     justify-content: center;
     
@@ -30,9 +30,10 @@ transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-   /* estilo al hacer hover */
-   transform: scale(1.05);
-   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  
+   box-shadow: 0 0 30px rgb(105, 189, 214);
+   transform: scale(1.06);
+   transition: all 0.6s;
 }
  
  .closeButton {
@@ -63,6 +64,7 @@ transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
  
  .cardInfo {
    font-family: Arial;
+   font-weight: bold;
     position: absolute;
     bottom: 0;
     left: 0;
