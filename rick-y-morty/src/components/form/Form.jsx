@@ -1,5 +1,6 @@
 import { useState } from "react";
 import validation from "./validation.js";
+import styles from './form.module.css'
 
 
 const Form = ({ login }) => {
@@ -34,17 +35,20 @@ const Form = ({ login }) => {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input type="text" name="username" value={userData.username} onChange={handleInputChange}/>
-            {errors.username && <p >{errors.username}</p>}
+        <div className={styles.container}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <h1>Rick and Morty App</h1>
+            <label htmlFor="username" className={styles.label} >Username:</label>
+            <input type="text" name="username" className={styles.input1} value={userData.username} onChange={handleInputChange}/>
+            {errors.username && <p className={styles.error} >{errors.username}</p>}
 
-            <label htmlFor="password">Password:</label>
-            <input type="password" name="password" value={userData.password} onChange={handleInputChange}/>
-            {errors.password && <p >{errors.password}</p>}
+            <label htmlFor="password"  className={styles.label} >Password:</label>
+            <input type="password" name="password" className={styles.input2} value={userData.password} onChange={handleInputChange}/>
+            {errors.password && <p className={styles.error} >{errors.password}</p>}
 
-            <button>LOGIN</button>
+            <button className={styles.button} >➜</button>
         </form>
+        </div>
     )
 }
 

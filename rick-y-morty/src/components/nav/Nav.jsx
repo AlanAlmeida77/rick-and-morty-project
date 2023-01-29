@@ -6,11 +6,12 @@ import {Link} from 'react-router-dom';
 const Nav = (props) => {
     return (
     <div className={styles.nav}>
-        <Link to='/home'>LOGOUT</Link>
-        <Link to='about'>About</Link>
-        <Link to='home'>Home</Link>
+        <Link to='/home'><button className={styles.buttons}>LOGOUT</button></Link>
+        <Link to='about'><button className={styles.buttons} >About</button></Link>
+        <Link to='home'><button className={styles.buttons}>Home</button></Link>
+        <Link to='favorites'><button className={styles.buttons}>Favoritos</button></Link>
         <SearchBar onSearch={props.onSearch} />
-        <button className={styles.buttonRandom} onClick={props.onRandom}>Personaje Random</button>
+        <button className={`${styles.buttons} random`} onClick={props.onRandom}>Personaje Random</button>
     </div>
     )
 }

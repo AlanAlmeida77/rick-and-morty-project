@@ -26,7 +26,7 @@ type='search'
 value={character}
 onChange={(event) => setCharacter(event.target.value)}
 />
-<button className={styles.addButton} type="submit">Agregar</button>
+<button className={styles.buttons} type="submit">Agregar</button>
 </form>
 );
 }
