@@ -1,14 +1,20 @@
-export const addToFavorites = (character) => {
-    return {
-        type: "ADD_FAVORITES",
-        payload: character
-    }
+export const ORDER = "ORDER";
+export const FILTER = "FILTER";
+export const ADD_FAVORITE = "ADD_FAVORITE";
+export const DELETE_FAVORITE = "DELETE_FAVORITE";
+
+export const addFavorite = (character) => {
+    return { type: ADD_FAVORITE, payload: character }
 }
 
-export const removeFromFavorites = (id) => {
-    return {
-        type: "REMOVE_FAVORITES",
-        payload: id
-    }
+export const deleteFavorite = (id) => {
+    return { type: DELETE_FAVORITE, payload: id }
 }
 
+export const filterCards = (status) => {
+    return { type: FILTER, payload: status }
+}
+
+export const orderCards = (id) => {
+    return { type: ORDER, payload: id}
+}
