@@ -1,0 +1,59 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  border-radius: 999999rem;
+  height: 4rem;
+  background: rgb(21, 58, 99);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 58, 99, 0.7987570028011204) 5%,
+    rgba(129, 161, 191, 0.4654236694677871) 100%
+  );
+  padding: 1rem;
+}
+
+.btns {
+  display: flex;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  align-items: center;
+  gap: 5rem;
+}
+
+.about,
+.home,
+.favorites,
+.logout {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b5edfc;
+  margin-top: 0.5rem;
+  width: 8rem;
+  height: 2.2rem;
+  background: rgb(21, 58, 99);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 58, 99, 0.7987570028011204) 5%,
+    rgba(129, 161, 191, 0.4654236694677871) 100%
+  );
+  border: transparent;
+  border-radius: 6rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.about:hover,
+.home:hover,
+.favorites:hover,
+.logout:hover {
+  transform: scale(1.05);
+  color: white;
+  background-color: #167bbe44;
+  box-shadow: 0 0 1rem #0aabd39b, 0 0 4rem #61e0f79b, 0 0 8rem #5ed0f375;
+}
+

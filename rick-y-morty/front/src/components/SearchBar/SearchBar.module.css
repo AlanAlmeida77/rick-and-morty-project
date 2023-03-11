@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search {
+    background-color: rgb(0, 0, 0);
+    border-radius: 20rem;
+    width: 15rem;
+    height: 2rem;
+    border: transparent;
+    color: white;
+    overflow: hidden;
+    transition: 300ms;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.308), 0 0 2rem rgba(0, 0, 0, 0.226), 0 0 4rem rgba(0, 0, 0, 0.212);
+  }
+  
+  .search::placeholder {
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Tahoma, sans-serif;
+  }
+  
+  .search:hover {
+    box-shadow: 0 0 1rem rgba(26, 137, 151, 0.461), 0 0 4rem rgba(80, 204, 235, 0.461), 0 0 8rem rgba(100, 233, 243, 0.461);
+  }
+  
+  .container .addButton {
+    margin-left: 1rem;
+    border-radius: 6rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #B5EDFC;
+    margin-top: 0.5rem;
+    width: 8rem;
+    height: 2.2rem;
+    background: rgb(21,58,99);
+    background: linear-gradient(90deg, rgba(21,58,99,0.7987570028011204) 5%, rgba(129,161,191,0.4654236694677871) 100%);
+    border: transparent;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    transition: 300ms;
+  }
+  
+  .container .addButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: white;
+    background-color: #167bbe44;
+    box-shadow: 0 0 1rem #0aabd39b, 0 0 4rem #61e0f79b, 0 0 8rem #5ed0f375;
+  }

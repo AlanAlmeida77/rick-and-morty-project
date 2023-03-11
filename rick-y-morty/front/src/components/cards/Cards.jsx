@@ -1,24 +1,30 @@
-import Card from './Card';
-import styles from "./cards.module.css";
+import style from "./Cards.module.css";
+import Card from '../Card/Card';
+import { useEffect } from 'react';
 
-export default function Cards(props) {
-   const { characters, onClose } = props;
+function Cards({ characters, onClose }) { // [{...}, {...}, {...}]
+
+   useEffect(() => {
+      localStorage.setItem('cards', JSON.stringify(characters));
+   }, [characters]);
+
    return (
-   <div className={styles.cardsContainer}>
+      <div className={style.container}>
          {
-            characters.map((character,index) =>{
-               return <Card 
-                  key={index}
-                  id={character.id}
-                  name={character.name}
-                  species={character.species}
-                  gender={character.gender}
-                  image={character.image}
-                  onClose={onClose}
-               />
+            characters.map(({id, name, species, gender, image}) => {
+              return <Card
+               key={id}
+               name={name}
+               species={species}
+               gender={gender}
+               image={image}
+               id={id}
+               onClose={() => onClose(id)}
+              />
             })
          }
-   </div>
-
-   );
+      </div>
+   )
 }
+
+export default Cards;
